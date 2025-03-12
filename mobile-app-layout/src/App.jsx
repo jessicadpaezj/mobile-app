@@ -1,36 +1,26 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import appLogo from '/favicon.svg'
-import PWABadge from './PWABadge.jsx'
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Register from "./views/register.jsx"; 
+import NewAlarm from './views/newAlarm.jsx';
+import AlarmConfig from './views/alarmConfigs.jsx'
+import AlarmView from './views/alarmView.jsx'
+import Login from './views/login.jsx';
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={appLogo} className="logo" alt="mobile-app-layout logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>mobile-app-layout</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <PWABadge />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/new-alarm" element={<NewAlarm />} />
+        <Route path="/alarm-config" element={<AlarmConfig />} />
+        <Route path="/alarm-view" element={<AlarmView />} />
+      </Routes>
+  </Router>
   )
 }
 
