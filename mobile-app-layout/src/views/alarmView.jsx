@@ -1,4 +1,5 @@
-import { Box, Typography, Button, BottomNavigation, BottomNavigationAction, Switch, IconButton, Divider } from "@mui/material";
+import { Box, Typography, Button, BottomNavigation, BottomNavigationAction, Switch, IconButton  } from "@mui/material";
+import LogoutIcon from "@mui/icons-material/Logout";
 import AlarmIcon from "@mui/icons-material/Alarm";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
@@ -24,8 +25,14 @@ export default function NewAlarm() {
       }}
     >
       {/* Encabezado */}
-      <Box sx={{ backgroundColor: "#4A37B8", padding: "16px" }}>
-        <Typography variant="h6">Alarmas</Typography>
+      <Box sx={{ backgroundColor: "#4A37B8", padding: "16px", display: "flex", justifyContent: "space-between",  alignItems: "center", position: "relative"  }}>
+        <Typography variant="h6"  sx={{ position: "absolute", left: "50%", transform: "translateX(-50%)" }}>Alarmas</Typography>
+        <IconButton 
+          sx={{ color: "white", position: "relative", left: "90%" }} 
+          href="/login"
+        >
+          <LogoutIcon />
+        </IconButton>
       </Box>
 
       {/* Tarjeta de alarma */}
@@ -37,7 +44,7 @@ export default function NewAlarm() {
           width: "80%",
           alignSelf: "center",
           position: "relative",
-          top:-83,
+          top:-114,
         }}
       >
         {/* Días de la alarma */}
@@ -60,29 +67,15 @@ export default function NewAlarm() {
           bottom: "-80px",
           backgroundColor: "#6E56CF",
           color: "white",
+          width:"70px",
+          height: "70px"
         }}
         href="/alarm-config"
       >
         <EditIcon />
       </IconButton>
 
-      {/* Botón Ver Más */}
-      <Button
-        variant="contained"
-        sx={{
-          bgcolor: "#6E56CF",
-          borderRadius: "20px",
-          width: "80%",
-          fontSize: "16px",
-          color: "white",
-          textTransform: "none",
-          alignSelf: "center",
-          top: "40px",
-        }}
-        href="/login"
-      >
-        Cerrar sesión
-      </Button>
+      
 
       {/* Barra de navegación inferior */}
       <BottomNavigation

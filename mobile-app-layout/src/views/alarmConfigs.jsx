@@ -48,7 +48,7 @@ export default function AlarmConfig() {
       {/* Tarjeta de alarma */}
       <Box
         sx={{
-          backgroundColor: "#4B3A85",
+          backgroundColor: "#080B23",
           padding: "20px",
           borderRadius: "5px",
           width: "90%",
