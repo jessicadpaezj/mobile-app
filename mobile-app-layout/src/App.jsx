@@ -19,6 +19,7 @@ function App() {
         <Route path="/new-alarm" element={<NewAlarm />} />
         <Route path="/alarm-config" element={<AlarmConfig />} />
         <Route path="/alarm-view" element={<AlarmView />} />
+        <Route path="/*" element={<Navigate to="/login" />} />
       </Routes>
   </Router>
   )
